@@ -1,0 +1,594 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"convert_num_to_url"
+			],
+			[
+				"digi",
+				"digit"
+			],
+			[
+				"conver",
+				"Convertor"
+			],
+			[
+				"digit",
+				"digit_location"
+			],
+			[
+				"n",
+				"noMovesMsg"
+			],
+			[
+				"is",
+				"isGameOver"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"bl",
+				"blackHasValidMoves"
+			],
+			[
+				"ne",
+				"newState"
+			],
+			[
+				"com",
+				"computerSquaresToChange"
+			],
+			[
+				"sq",
+				"squaresToChange"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"coor",
+				"coordinatesAroundSquare"
+			],
+			[
+				"va",
+				"validMoveFound"
+			],
+			[
+				"M",
+				"MAX_INDEX"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"ad",
+				"addTyle"
+			],
+			[
+				"fou",
+				"foundSameColorSquare"
+			],
+			[
+				"E",
+				"EMPTY_SQUARE"
+			],
+			[
+				"cu",
+				"currentPlayerColor"
+			],
+			[
+				"f",
+				"foundEmptySquare"
+			],
+			[
+				"ro",
+				"rowDiff"
+			],
+			[
+				"nex",
+				"nextSquareRow"
+			],
+			[
+				"w",
+				"whosTurn"
+			],
+			[
+				"i",
+				"isPlayerTurn"
+			],
+			[
+				"in",
+				"initialState"
+			],
+			[
+				"g",
+				"gameReducer"
+			],
+			[
+				"curre",
+				"current_state"
+			],
+			[
+				"curr",
+				"current_state"
+			],
+			[
+				"cur",
+				"current_req"
+			],
+			[
+				"elvator",
+				"elevatorRequest"
+			],
+			[
+				"Re",
+				"RequestManager"
+			],
+			[
+				"request",
+				"request_queue"
+			],
+			[
+				"fl",
+				"floor_number"
+			],
+			[
+				"me",
+				"medium_spots"
+			],
+			[
+				"spot_",
+				"spot_number"
+			],
+			[
+				"pa",
+				"parking_arrangement"
+			],
+			[
+				"ve",
+				"vehicle"
+			],
+			[
+				"park",
+				"parking_arrangement"
+			],
+			[
+				"spo",
+				"spot_num"
+			],
+			[
+				"small",
+				"small_spots"
+			],
+			[
+				"spot",
+				"spot_sizes"
+			],
+			[
+				"pla",
+				"place_vehicle"
+			],
+			[
+				"P",
+				"ParkingLot"
+			],
+			[
+				"sma",
+				"small_spots"
+			],
+			[
+				"bi",
+				"big_spots"
+			],
+			[
+				"la",
+				"lambda"
+			],
+			[
+				"ra",
+				"random_card"
+			],
+			[
+				"re",
+				"removeClass"
+			],
+			[
+				"numbe",
+				"number_of_recaps"
+			],
+			[
+				"user",
+				"user_appointments"
+			],
+			[
+				"app",
+				"appointment_number"
+			],
+			[
+				"Appoin",
+				"appointment"
+			],
+			[
+				"appoin",
+				"appointment"
+			],
+			[
+				"ch",
+				"chaiHttp"
+			],
+			[
+				"local",
+				"localhost"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ronnyalmog/development/what_number.html",
+		"/Users/ronnyalmog/go/src/hello/hello_test.go",
+		"/Users/ronnyalmog/go/src/hello/hello.go",
+		"/Users/ronnyalmog/go/src/url_shortener/homepage.html",
+		"/Users/ronnyalmog/go/src/url_shortener/store.go",
+		"/Users/ronnyalmog/go/src/url_shortener/server.go",
+		"/Users/ronnyalmog/go/src/url_shortener/template.go",
+		"/Users/ronnyalmog/development/othello-game/src/index.css",
+		"/Users/ronnyalmog/development/othello-game/src/App.js",
+		"/Users/ronnyalmog/development/othello-game/README.md",
+		"/Users/ronnyalmog/development/othello-game/src/App.css",
+		"/Users/ronnyalmog/development/othello-game/src/store.js",
+		"/Users/ronnyalmog/development/othello-game/src/reducers/square-reducer.js",
+		"/Users/ronnyalmog/development/othello-game/src/reducers/board-reducer.js",
+		"/Users/ronnyalmog/development/othello-game/src/components/App.js",
+		"/Users/ronnyalmog/development/othello-game/node_modules/html-minifier/node_modules/uglify-js/lib/output.js",
+		"/Users/ronnyalmog/development/othello-game/src/reducers/index.js",
+		"/Users/ronnyalmog/development/othello-game/src/components/App.css",
+		"/Users/ronnyalmog/development/othello-game/src/registerServiceWorker.js",
+		"/Users/ronnyalmog/development/othello-game/src/logo.svg",
+		"/Users/ronnyalmog/development/tic_tac/src/index.js",
+		"/Users/ronnyalmog/development/parking_lot.rb",
+		"/Users/ronnyalmog/development/elevator.rb",
+		"/Users/ronnyalmog/development/deck_of_cards.rb",
+		"/Users/ronnyalmog/development/kuku/config/routes.rb",
+		"/Users/ronnyalmog/Downloads/archive/Images\\style.css",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/hw/style.css",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/hw/index.html",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/problem-a.js",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/hw/problem.js",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/answer.js",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/problem.js",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/index.html",
+		"/Users/ronnyalmog/development/js-class-SI/last week homework/style.css",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/Gemfile",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/views/jobs/index.html.erb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/spec/controllers/jobs_controller_spec.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/config/initializers/simple_form.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/views/layouts/application.html.erb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/assets/stylesheets/application.css.scss",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/db/schema.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/db/migrate/20170603180345_add_description_to_jobs.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/config/routes.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/models/job.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/assets/javascripts/application.js",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/assets/stylesheets/application.scss",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/spec/models/job_spec.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/db/migrate/20170531002636_create_jobs.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/spec/spec_helper.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/views/jobs/jobs.html.erb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/spec/helpers/jobs_helper_spec.rb",
+		"/Users/ronnyalmog/development/ronny-almog-jerb-interview/app/controllers/jobs_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/config/routes.rb",
+		"/Users/ronnyalmog/Downloads/application.yml",
+		"/Users/ronnyalmog/development/within-dashboard/app/assets/javascripts/admin/appointments.coffee",
+		"/Users/ronnyalmog/development/within-dashboard/app/assets/javascripts/application.js",
+		"/Users/ronnyalmog/development/within-dashboard/lib/db/development.sqlite3",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/admin/appointments_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/models/appointment.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/views/landing_pages/index.html.erb",
+		"/Users/ronnyalmog/development/within-dashboard/app/views/devise/registrations/new.html.erb",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/admins_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161117145356_change_default_value_of_role_attribute.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161208143007_add_recap_number_to_appointments.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/models/user.rb",
+		"/Users/ronnyalmog/development/within-dashboard/config/initializers/intercom.rb",
+		"/Users/ronnyalmog/development/within-dashboard/Gemfile",
+		"/Users/ronnyalmog/development/within-dashboard/config/initializers/inflections.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/Gemfile",
+		"/Users/ronnyalmog/development/within-dashboard/db/schema.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/views/admins/home.html.erb",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/landing_pages_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/application_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/pres_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/models/admin.rb",
+		"/Users/ronnyalmog/development/within-dashboard/config/database.yml",
+		"/Users/ronnyalmog/development/within-dashboard/config/environments/production.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/controllers/coverages_controller.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161115213427_add_default_value_to_covered_attribute.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/views/layouts/application.html.erb",
+		"/Users/ronnyalmog/development/within-dashboard/app/models/customer.rb",
+		"/Users/ronnyalmog/development/within-dashboard/app/views/landing_pages/_header.html.erb",
+		"/Users/ronnyalmog/development/within-dashboard/.gitignore",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161110153806_add_name_to_user.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161110205017_create_appointments.rb",
+		"/Users/ronnyalmog/development/within-dashboard/Gemfile.lock",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161110171009_rename_type_to_role.rb",
+		"/Users/ronnyalmog/development/within-dashboard/config.ru",
+		"/Users/ronnyalmog/development/within-dashboard/config/environments/development.rb",
+		"/Users/ronnyalmog/development/within-dashboard/db/migrate/20161110152415_devise_create_users.rb",
+		"/Applications/vagrant_1.8.7.dmg",
+		"/Users/ronnyalmog/virtual-env/rails_env/Vagrantfile",
+		"/Users/ronnyalmog/virtual-env/dev_rails/Vagrantfile",
+		"/Users/ronnyalmog/virtual-env/rails-env/Vagrantfile"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "package.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"sch",
+				"db/schema.rb"
+			],
+			[
+				"application.ht",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"schema",
+				"db/schema.rb"
+			],
+			[
+				"application",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"applica",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"sim",
+				"config/initializers/simple_form.rb"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"",
+				"~/development/within-dashboard/config/database.yml"
+			],
+			[
+				"da",
+				"config/database.yml"
+			],
+			[
+				"secre",
+				"config/secrets.yml"
+			],
+			[
+				"sc",
+				"db/schema.rb"
+			],
+			[
+				"initi",
+				"config/initializers/inflections.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"admin",
+				"app/models/admin.rb"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"pr",
+				"config/environments/production.rb"
+			],
+			[
+				"shema",
+				"db/schema.rb"
+			],
+			[
+				"appl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"app",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"appli",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20161110171009_rename_type_to_role.rb"
+			],
+			[
+				"applicatt",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"dev",
+				"config/environments/development.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
