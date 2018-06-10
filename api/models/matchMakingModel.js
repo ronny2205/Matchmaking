@@ -1,16 +1,138 @@
 'use strict';
 
-const kuku = () => {
-  return 67;
+// 
+const REASONABLE_EXPERIENCE_DIFFERENCE = 10;
+
+//const CLOSE_MMR_PLAYERS_AMOUNT = 10;
+
+const kuku = (x) => {
+  return x + 67;
 };
 
+const closestPlayerMmr = (arr, target) => {
+  if (!(arr) || arr.length == 0) {
+    return null;
+  }
+  if (arr.length == 1) {
+    return arr[0];
+  }
+
+  for (var i=1; i<arr.length; i++) {
+      // As soon as a number bigger than target is found, return the previous or current
+      // number depending on which has smaller difference to the target.
+      if (arr[i].MMR > target.MMR) {
+          var p = arr[i-1];
+          var c = arr[i]
+          return Math.abs( p.MMR - target.MMR ) < Math.abs( c.MMR - target.MMR ) ? 
+          {'player': p, 'index': i-1} : {'player': c, 'index': i};
+      }
+  }
+    // No number in array is bigger so return the last.
+    return arr[arr.length-1];
+}
+
+// Find a match for a player - a player with the closethest MMR and reasonable experience difference
+//
+// @param playerId - the player to find a match for
+// returns matchingPlayerId - the id of the matched player
+const findMatch = (playerId) => {
+  // Find the player's info
+  // const currentPlayerInfo = players.filter(function(el) {
+  //   return el.id === playerId;
+  // })[0];
+
+  const currentPlayer = players.find((player) => { 
+    return player.id === playerId; 
+  });
+
+  const currentPlayerIndex = players.findIndex(player => player.id === playerId);
+
+  console.log(currentPlayer);
+  console.log(currentPlayerIndex);
+
+
+  let prevIndex = currentPlayerIndex - 1;
+  let nextIndex = currentPlayerIndex + 1;
+  let matchFound = false;
+  //let potentialPlayer;
+  // Find the player with the closest MMR and reasonable experience difference
+  while (!matchFound) {
+    let potentialPlayer;// = players[index];
+    let potentialPlayerIndex; 
+//console.log(players[prevIndex].available);
+    if (nextIndex >= players.length){
+      potentialPlayerIndex = prevIndex;
+      prevIndex--;
+    } else if (prevIndex < 0) {
+      potentialPlayerIndex = nextIndex;
+      nextIndex++;
+    } else if (Math.abs(players[prevIndex].MMR - currentPlayer.MMR) < Math.abs(players[nextIndex].MMR - currentPlayer.MMR)) {
+      potentialPlayerIndex = prevIndex;
+      prevIndex--;
+    } else {
+      potentialPlayerIndex = nextIndex;
+      nextIndex++;
+    }
+    console.log(potentialPlayerIndex);
+    potentialPlayer = players[potentialPlayerIndex];
+console.log(Math.abs(potentialPlayer.experience - currentPlayer.experience));
+//console.log(potentialPlayer);
+    if (potentialPlayer.available && Math.abs(potentialPlayer.experience - currentPlayer.experience) < REASONABLE_EXPERIENCE_DIFFERENCE) {
+      return potentialPlayer.id;
+    }
+
+     console.log(potentialPlayer);
+
+    //matchFound = true;
+   }
+
+
+  //console.log(players[0]);
+  //console.log(players.length);
+
+  // Array of all players besides the one that is looking for a match
+  // const otherPlayers = players.filter(function(el) {
+  //   return el.id !== playerId;
+  // });
+  // console.log(players.length);
+  // console.log(otherPlayers.length);
+
+  // Find players with close MMR
+  // let closeMmrPlayers = [];
+  // const midPlayerIndex = Math.round(players.length / 2);
+  // console.log(midPlayerIndex);
+
+  // Find the player with the closethest MMR
+  // let index = midPlayerIndex;
+  // let closeMmrFound = false;
+  // while (!closeMmrFound) {
+  //   let potentialPlayer = players[index];
+  //   console.log(Math.abs(potentialPlayer.MMR - currentPlayer.MMR));
+  //   closeMmrFound = true;
+  // }
+
+  // const result = closestPlayerMmr(players, currentPlayer);
+
+
+  // const closestPlayer = result.player;
+  // const playerIndex = result.index;
+
+  //   console.log(closestPlayer);
+  //   console.log(playerIndex);
+
+
+  return potentialPlayerIndex;
+};
+
+
 // Mock data - array of players, sorted by MMR
-const players = () => {
-  return [
+// const players = () => { 
+ // return [
+const players = [
     {
       'id': 18,
       'MMR': 2200,
-      'experience': 123,
+      'experience': 36,
       'available': true
     },
     {
@@ -307,8 +429,8 @@ const players = () => {
       'experience': 456,
       'available': false
     }
-  ]
-};
+  ];
+//};
 
 var thelist = function() {  
   var objJson = {
@@ -328,4 +450,12 @@ var thelist = function() {
 };
 // exports.teamlist = kuku();  
 //exports.teamlist = thelist();  
-exports.teamlist = players();  
+//exports.teamlist = kuku();  
+
+
+module.exports = {
+ kuku,
+ //thelist,
+ //players,
+ findMatch
+};
