@@ -14,7 +14,8 @@
   "author": "Ronny Almog",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "ws": "3.3.2"
   },
   "dependencies": {
     "express": "^4.16.3"
