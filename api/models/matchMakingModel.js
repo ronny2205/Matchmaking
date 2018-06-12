@@ -1,45 +1,77 @@
 'use strict';
 
-// 
+// Assumption that could be changed based on the gaming platform
 const REASONABLE_EXPERIENCE_DIFFERENCE = 10;
+const REASONABLE_MMR_DIFFERENCE = 200;
 
-//const CLOSE_MMR_PLAYERS_AMOUNT = 10;
+const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, currentPlayerIndex) => {
+  console.log(allPlayers);
+  let prevIndex = currentPlayerIndex - 1;
+  let nextIndex = currentPlayerIndex + 1;
+  let matchFound = false;
 
-const kuku = (x) => {
-  return x + 67;
-};
+  while (!matchFound) {
+    let potentialPlayer;
+    let potentialPlayerIndex; 
+//console.log(players[prevIndex].available);
 
-const closestPlayerMmr = (arr, target) => {
-  if (!(arr) || arr.length == 0) {
-    return null;
+    // Find the next potential player
+    if (nextIndex >= allPlayers.length){
+      potentialPlayerIndex = prevIndex;
+      prevIndex--;
+    } else if (prevIndex < 0) {
+      potentialPlayerIndex = nextIndex;
+      nextIndex++;
+    } else if (Math.abs(allPlayers[prevIndex].MMR - currentPlayer.MMR) < Math.abs(allPlayers[nextIndex].MMR - currentPlayer.MMR)) {
+      potentialPlayerIndex = prevIndex;
+      prevIndex--;
+    } else {
+      potentialPlayerIndex = nextIndex;
+      nextIndex++;
+    }
+    //console.log(potentialPlayerIndex);
+    potentialPlayer = allPlayers[potentialPlayerIndex];
+
+    if (potentialPlayer.available) {
+      return potentialPlayer.id;
+    }
+
   }
-  if (arr.length == 1) {
-    return arr[0];
-  }
-
-  for (var i=1; i<arr.length; i++) {
-      // As soon as a number bigger than target is found, return the previous or current
-      // number depending on which has smaller difference to the target.
-      if (arr[i].MMR > target.MMR) {
-          var p = arr[i-1];
-          var c = arr[i]
-          return Math.abs( p.MMR - target.MMR ) < Math.abs( c.MMR - target.MMR ) ? 
-          {'player': p, 'index': i-1} : {'player': c, 'index': i};
-      }
-  }
-    // No number in array is bigger so return the last.
-    return arr[arr.length-1];
 }
 
-// Find a match for a player - a player with the closethest MMR and reasonable experience difference
-//
-// @param playerId - the player to find a match for
-// returns matchingPlayerId - the id of the matched player
+
+/**
+ * Finds the player with closest experience difference within reasonable mmr difference
+ *
+ * @param array  potentialPlayers Array of players with reasonable mmr difference
+ * @param object currentPlayer    Current player details
+ *
+ * return int    id The id of the player with closest experience difference within reasonable mmr difference
+ */
+const find_player_with_closest_experience_difference_within_reasonable_mmr = (potentialPlayers, currentPlayer, currentPlayerIndex) => {
+    // If no player is in the reasonable MMR difference, find the player with closest MMR that is availble 
+  // write a function for that + model test
+  if (potentialPlayers.length === 0) {
+    return find_available_player_with_closest_mmr(players, currentPlayer, currentPlayerIndex);
+  }
+  // Remove players that are not in the reasonable MMR difference
+  potentialPlayers = potentialPlayers.filter(player => Math.abs(player.MMR - currentPlayer.MMR) <= REASONABLE_MMR_DIFFERENCE);
+  //potentialPlayers1 = potentialPlayers.filter(player => player.MMR > 2000);
+
+  const player = potentialPlayers.reduce((prev, curr) => Math.abs(curr.experience - currentPlayer.experience) < Math.abs(prev.experience - currentPlayer.experience) ? curr : prev);
+  return player.id;
+}
+
+
+/**
+ * Find a match for a player - a player with the closest MMR and reasonable experience difference
+ * The MMR difference should not exceed a reasonable difference
+ *
+ * @param playerId - the player to find a match for
+ *
+ * return matchingPlayerId - the id of the matched player
+ */
 const findMatch = (playerId) => {
-  // Find the player's info
-  // const currentPlayerInfo = players.filter(function(el) {
-  //   return el.id === playerId;
-  // })[0];
 
   const currentPlayer = players.find((player) => { 
     return player.id === playerId; 
@@ -47,19 +79,24 @@ const findMatch = (playerId) => {
 
   const currentPlayerIndex = players.findIndex(player => player.id === playerId);
 
-  console.log(currentPlayer);
-  console.log(currentPlayerIndex);
+  // console.log(currentPlayer);
+  // console.log(currentPlayerIndex);
 
+  // If no player is in the reasonable MMR difference, find the player with closest MMR that is availble 
+  // write a function for that + model test
 
   let prevIndex = currentPlayerIndex - 1;
   let nextIndex = currentPlayerIndex + 1;
   let matchFound = false;
-  //let potentialPlayer;
+  const potentialPlayers = [];
+
   // Find the player with the closest MMR and reasonable experience difference
   while (!matchFound) {
-    let potentialPlayer;// = players[index];
+    let potentialPlayer;
     let potentialPlayerIndex; 
 //console.log(players[prevIndex].available);
+
+    // Find the next potential player
     if (nextIndex >= players.length){
       potentialPlayerIndex = prevIndex;
       prevIndex--;
@@ -73,15 +110,26 @@ const findMatch = (playerId) => {
       potentialPlayerIndex = nextIndex;
       nextIndex++;
     }
-    console.log(potentialPlayerIndex);
+    //console.log(potentialPlayerIndex);
     potentialPlayer = players[potentialPlayerIndex];
-console.log(Math.abs(potentialPlayer.experience - currentPlayer.experience));
 //console.log(potentialPlayer);
-    if (potentialPlayer.available && Math.abs(potentialPlayer.experience - currentPlayer.experience) < REASONABLE_EXPERIENCE_DIFFERENCE) {
-      return potentialPlayer.id;
+    if (potentialPlayer.available && Math.abs(potentialPlayer.MMR - currentPlayer.MMR) <= REASONABLE_MMR_DIFFERENCE) {
+      potentialPlayers.push(potentialPlayer);
+      if (Math.abs(potentialPlayer.experience - currentPlayer.experience) <= REASONABLE_EXPERIENCE_DIFFERENCE) {
+        return potentialPlayer.id;
+      }
+    } 
+    if (Math.abs(potentialPlayer.MMR - currentPlayer.MMR) > REASONABLE_MMR_DIFFERENCE) {
+      console.log(potentialPlayers);
+      return find_player_with_closest_experience_difference_within_reasonable_mmr(potentialPlayers, currentPlayer, currentPlayerIndex);
     }
+//console.log(Math.abs(potentialPlayer.experience - currentPlayer.experience));
+// console.log(potentialPlayer);
+    // if (potentialPlayer.available && Math.abs(potentialPlayer.experience - currentPlayer.experience) < REASONABLE_EXPERIENCE_DIFFERENCE) {
+    //   return potentialPlayer.id;
+    // }
 
-     console.log(potentialPlayer);
+     //console.log(potentialPlayer);
 
     //matchFound = true;
    }
@@ -121,7 +169,7 @@ console.log(Math.abs(potentialPlayer.experience - currentPlayer.experience));
   //   console.log(playerIndex);
 
 
-  return potentialPlayerIndex;
+  return potentialPlayerIndex; // ???
 };
 
 
@@ -430,32 +478,9 @@ const players = [
       'available': false
     }
   ];
-//};
-
-var thelist = function() {  
-  var objJson = {
-    "GroupName": "D",
-    "count": 4,
-    "teams": [{
-      "country": "England"
-    }, {
-      "country": "France"
-    }, {
-      "country": "Sweden"
-    }, {
-      "country": "Ukraine"
-    }]
-  };
-  return objJson;
-};
-// exports.teamlist = kuku();  
-//exports.teamlist = thelist();  
-//exports.teamlist = kuku();  
-
 
 module.exports = {
- kuku,
- //thelist,
- //players,
- findMatch
+  find_available_player_with_closest_mmr,
+  find_player_with_closest_experience_difference_within_reasonable_mmr,
+  findMatch
 };

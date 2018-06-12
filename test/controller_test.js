@@ -18,7 +18,7 @@ describe('GET - match path', () => {
 
   it('Should return an id of a matching player', (done) => {
     request('http://localhost:3000/players/18/match' , (error, response, body) => {
-      expect(body).to.equal('9');
+      expect(body).to.equal('16');
       done();
     });
   });
