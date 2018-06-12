@@ -4,6 +4,15 @@
 const REASONABLE_EXPERIENCE_DIFFERENCE = 10;
 const REASONABLE_MMR_DIFFERENCE = 200;
 
+/**
+ * Finds available player with closest mmr 
+ *
+ * @param array  allPlayers         Array of all players 
+ * @param object currentPlayer      Current player details
+ * @param int    currentPlayerIndex Current player index in the players array
+ *
+ * return int    id The id of the player with closest experience difference within reasonable mmr difference
+ */
 const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, currentPlayerIndex) => {
   console.log(allPlayers);
   let prevIndex = currentPlayerIndex - 1;
@@ -13,7 +22,6 @@ const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, curre
   while (!matchFound) {
     let potentialPlayer;
     let potentialPlayerIndex; 
-//console.log(players[prevIndex].available);
 
     // Find the next potential player
     if (nextIndex >= allPlayers.length){
@@ -29,7 +37,6 @@ const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, curre
       potentialPlayerIndex = nextIndex;
       nextIndex++;
     }
-    //console.log(potentialPlayerIndex);
     potentialPlayer = allPlayers[potentialPlayerIndex];
 
     if (potentialPlayer.available) {
@@ -43,8 +50,9 @@ const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, curre
 /**
  * Finds the player with closest experience difference within reasonable mmr difference
  *
- * @param array  potentialPlayers Array of players with reasonable mmr difference
- * @param object currentPlayer    Current player details
+ * @param array  potentialPlayers   Array of players with reasonable mmr difference
+ * @param object currentPlayer      Current player details
+ * @param int    currentPlayerIndex Current player index in the players array
  *
  * return int    id The id of the player with closest experience difference within reasonable mmr difference
  */
@@ -110,9 +118,9 @@ const findMatch = (playerId) => {
       potentialPlayerIndex = nextIndex;
       nextIndex++;
     }
-    //console.log(potentialPlayerIndex);
+
     potentialPlayer = players[potentialPlayerIndex];
-//console.log(potentialPlayer);
+
     if (potentialPlayer.available && Math.abs(potentialPlayer.MMR - currentPlayer.MMR) <= REASONABLE_MMR_DIFFERENCE) {
       potentialPlayers.push(potentialPlayer);
       if (Math.abs(potentialPlayer.experience - currentPlayer.experience) <= REASONABLE_EXPERIENCE_DIFFERENCE) {
@@ -123,59 +131,11 @@ const findMatch = (playerId) => {
       console.log(potentialPlayers);
       return find_player_with_closest_experience_difference_within_reasonable_mmr(potentialPlayers, currentPlayer, currentPlayerIndex);
     }
-//console.log(Math.abs(potentialPlayer.experience - currentPlayer.experience));
-// console.log(potentialPlayer);
-    // if (potentialPlayer.available && Math.abs(potentialPlayer.experience - currentPlayer.experience) < REASONABLE_EXPERIENCE_DIFFERENCE) {
-    //   return potentialPlayer.id;
-    // }
-
-     //console.log(potentialPlayer);
-
-    //matchFound = true;
-   }
-
-
-  //console.log(players[0]);
-  //console.log(players.length);
-
-  // Array of all players besides the one that is looking for a match
-  // const otherPlayers = players.filter(function(el) {
-  //   return el.id !== playerId;
-  // });
-  // console.log(players.length);
-  // console.log(otherPlayers.length);
-
-  // Find players with close MMR
-  // let closeMmrPlayers = [];
-  // const midPlayerIndex = Math.round(players.length / 2);
-  // console.log(midPlayerIndex);
-
-  // Find the player with the closethest MMR
-  // let index = midPlayerIndex;
-  // let closeMmrFound = false;
-  // while (!closeMmrFound) {
-  //   let potentialPlayer = players[index];
-  //   console.log(Math.abs(potentialPlayer.MMR - currentPlayer.MMR));
-  //   closeMmrFound = true;
-  // }
-
-  // const result = closestPlayerMmr(players, currentPlayer);
-
-
-  // const closestPlayer = result.player;
-  // const playerIndex = result.index;
-
-  //   console.log(closestPlayer);
-  //   console.log(playerIndex);
-
-
-  return potentialPlayerIndex; // ???
+  }
 };
 
 
 // Mock data - array of players, sorted by MMR
-// const players = () => { 
- // return [
 const players = [
     {
       'id': 18,
