@@ -3,10 +3,13 @@ const matchMaking = require('../api/models/matchMakingModel');
 
 describe('Matchmaking model', () => {
 
+  it('should return player not found', () => {
+    assert.equal(matchMaking.findMatch(88), 'Player not found');
+  });
+
   it('should return the matched player id', () => {
     assert.equal(matchMaking.findMatch(5), 34);
   });
-
 
   it('should find the player with closest experience difference within reasonable mmr difference', () => {
     currentPlayer = { id: 12, MMR: 2000, experience: 77, available: true };
@@ -35,6 +38,4 @@ describe('Matchmaking model', () => {
     ];
     assert.equal(matchMaking.find_available_player_with_closest_mmr(allPlayers, currentPlayer, 3), 1);
   });
-
-  
 });

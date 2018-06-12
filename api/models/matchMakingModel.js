@@ -1,6 +1,6 @@
 'use strict';
 
-// Assumption that could be changed based on the gaming platform
+// Assumptions that could be changed based on the gaming platform
 const REASONABLE_EXPERIENCE_DIFFERENCE = 10;
 const REASONABLE_MMR_DIFFERENCE = 200;
 
@@ -11,7 +11,7 @@ const REASONABLE_MMR_DIFFERENCE = 200;
  * @param object currentPlayer      Current player details
  * @param int    currentPlayerIndex Current player index in the players array
  *
- * return int    id The id of the player with closest experience difference within reasonable mmr difference
+ * return int id The id of the player with closest experience difference within reasonable mmr difference
  */
 const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, currentPlayerIndex) => {
   console.log(allPlayers);
@@ -46,7 +46,6 @@ const find_available_player_with_closest_mmr = (allPlayers, currentPlayer, curre
   }
 }
 
-
 /**
  * Finds the player with closest experience difference within reasonable mmr difference
  *
@@ -70,7 +69,6 @@ const find_player_with_closest_experience_difference_within_reasonable_mmr = (po
   return player.id;
 }
 
-
 /**
  * Find a match for a player - a player with the closest MMR and reasonable experience difference
  * The MMR difference should not exceed a reasonable difference
@@ -81,12 +79,18 @@ const find_player_with_closest_experience_difference_within_reasonable_mmr = (po
  */
 const findMatch = (playerId) => {
 
+  const UNKNOWN_ARRAY_INDEX = -1;
+
   const currentPlayer = players.find((player) => { 
     return player.id === playerId; 
   });
 
   const currentPlayerIndex = players.findIndex(player => player.id === playerId);
-
+  
+  // Check whether the player exists in the system
+  if (currentPlayerIndex === UNKNOWN_ARRAY_INDEX) {
+    return 'Player not found';
+  }
   // console.log(currentPlayer);
   // console.log(currentPlayerIndex);
 
